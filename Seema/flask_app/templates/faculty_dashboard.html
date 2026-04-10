@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Faculty Dashboard</title>
+</head>
+<body>
+
+<h2>Overall Rating: {{ overall }}</h2>
+
+<h3>Teacher Performance</h3>
+<canvas id="teacherChart"></canvas>
+
+<h3>Department Performance</h3>
+<canvas id="deptChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+var teacher_names = {{ teacher_names | tojson }};
+var teacher_ratings = {{ teacher_ratings | tojson }};
+
+new Chart(document.getElementById("teacherChart"), {
+    type: 'bar',
+    data: {
+        labels: teacher_names,
+        datasets: [{
+            label: 'Avg Rating',
+            data: teacher_ratings
+        }]
+    }
+});
+
+var dept_names = {{ dept_names | tojson }};
+var dept_ratings = {{ dept_ratings | tojson }};
+
+new Chart(document.getElementById("deptChart"), {
+    type: 'bar',
+    data: {
+        labels: dept_names,
+        datasets: [{
+            label: 'Dept Avg',
+            data: dept_ratings
+        }]
+    }
+});
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+    <title>Faculty Dashboard</title>
+</head>
+<body>
+
+<h2>Overall Rating: {{ overall }}</h2>
+
+<h3>Teacher Performance</h3>
+<canvas id="teacherChart"></canvas>
+
+<h3>Department Performance</h3>
+<canvas id="deptChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+var teacher_names = {{ teacher_names | tojson }};
+var teacher_ratings = {{ teacher_ratings | tojson }};
+
+new Chart(document.getElementById("teacherChart"), {
+    type: 'bar',
+    data: {
+        labels: teacher_names,
+        datasets: [{
+            label: 'Avg Rating',
+            data: teacher_ratings
+        }]
+    }
+});
+
+var dept_names = {{ dept_names | tojson }};
+var dept_ratings = {{ dept_ratings | tojson }};
+
+new Chart(document.getElementById("deptChart"), {
+    type: 'bar',
+    data: {
+        labels: dept_names,
+        datasets: [{
+            label: 'Dept Avg',
+            data: dept_ratings
+        }]
+    }
+});
+</script>
+
+</body>
+</html>
