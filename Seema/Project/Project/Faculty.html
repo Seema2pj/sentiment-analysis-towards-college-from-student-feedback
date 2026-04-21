@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Live Faculty Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body {
+    font-family: Arial;
+    margin: 20px;
+    background: #f4f6f9;
+}
+
+h1 {
+    text-align: center;
+    background: #2c3e50;
+    color: white;
+    padding: 25px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    background: #34495e;
+}
+
+.nav button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+.nav button:hover {
+    background: #1abc9c;
+}
+
+.tab {
+    display: none;
+    padding: 20px;
+    text-align: center;
+}
+
+.active {
+    display: block;
+}
+
+iframe {
+    width: 95%;
+    height: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px gray;
+}
+
+img {
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px gray;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎓 Faculty Dashboard </h1>
+
+<div class="nav">
+<button onclick="showTab('overview')">Overview (Live)</button>
+<button onclick="showTab('teacher')">Teacher</button>
+<button onclick="showTab('department')">Department</button>
+<button onclick="showTab('feedback')">Insights</button>
+<button onclick="showTab('trend')">Trends</button>
+</div>
+
+<!-- 🔥 LIVE TAB -->
+<div id="overview" class="tab active">
+<h2>📊 Overview Dashboard</h2>
+
+<a href="https://app.powerbi.com/links/hV-mARB_7o?ctid=4b04d407-73b4-4819-af61-9aac61051aff&pbi_source=linkShare" target="_blank">
+   <button>Open Live Dashboard</button>
+</a>
+
+</div>
+
+
+
+
+
+
+<!-- 📷 STATIC TABS -->
+<div id="teacher" class="tab">
+<h2>👨‍🏫 Teacher Performance</h2>
+<img src="teacher.png">
+</div>
+
+<div id="department" class="tab">
+<h2>🏫 Department Analysis</h2>
+<img src="department.png">
+</div>
+
+<div id="feedback" class="tab">
+<h2>💬 Feedback Insights</h2>
+<img src="feedback.png">
+</div>
+
+<div id="trend" class="tab">
+<h2>📈 Trends</h2>
+<img src="trend.png">
+</div>
+
+<script>
+function showTab(tabId) {
+    var tabs = document.querySelectorAll(".tab");
+    tabs.forEach(tab => tab.classList.remove("active"));
+
+    document.getElementById(tabId).classList.add("active");
+}
+</script>
+
+</body>
+</html>
